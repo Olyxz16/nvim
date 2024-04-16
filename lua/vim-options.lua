@@ -7,7 +7,7 @@ vim.g.background = "light"
 
 vim.opt.swapfile = false
 
-vim.api.nvim_set_keymap('n', '<leader>e', ':Neotree toggle position=right<CR> cwd=./', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>e', ':Neotree toggle position=right<CR>', { noremap = true, silent = true })
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
