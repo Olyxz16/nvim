@@ -6,9 +6,15 @@ vim.g.mapleader = " "
 vim.g.background = "light"
 
 vim.opt.swapfile = false
+vim.opt.encoding = 'utf8'
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 1
+vim.cmd("set nofoldenable")
 
 vim.keymap.set('n', '<leader>e', ':Neotree toggle position=right<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>t', ':execute "belowright split" | term<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>t', ':belowright split<CR>', { noremap = true, silent = true })
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
