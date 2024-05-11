@@ -6,14 +6,14 @@ return {
       local config = require("nvim-treesitter.configs")
       config.setup({
         auto_install = true,
-        highlight = { 
+        highlight = {
           enable = true,
-          disable = { "vimdoc" }   
+          disable = { "vimdoc" }
         },
         indent = { enable = true },
         install = {
-          compilers = { "clang", "gcc" }, 
-        },  
+          compilers = { "clang", "gcc" },
+        },
       })
     end
   }

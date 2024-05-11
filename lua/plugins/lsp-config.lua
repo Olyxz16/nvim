@@ -1,17 +1,31 @@
 return {
   {
     "williamboman/mason.nvim",
-    lazy = false,
+    --lazy = false,
     config = function()
       require("mason").setup()
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    lazy = false,
+    --lazy = false,
     config = function()
       require("mason-lspconfig").setup({
-          ensure_installed = { "lua_ls", "csharp_ls" } 
+          ensure_installed = {
+                    "lua_ls",
+                    "csharp_ls",
+  --                "gopls",
+  --                "html",
+  --                "htmx",
+  --                "cssls",
+                    "jsonls",
+                    "tsserver",
+                    "autotools_ls",
+                    "tailwindcss",
+                    "astro",
+                    "dockerls",
+                    "docker_compose_language_service"
+                }
       })
     end,
     opts = {
@@ -20,7 +34,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    lazy = false,
+    --lazy = false,
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

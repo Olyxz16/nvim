@@ -3,7 +3,8 @@ return {
     opts = {
         projects = {
             "!~/.config/*",
-            "~/Appdata/Local/nvim/"
+            "~/Appdata/Local/nvim/",
+            "~/Desktop/Poker/"
         },
         last_session_on_startup = false,
     },
@@ -15,6 +16,5 @@ return {
         { "nvim-telescope/telescope.nvim" },
         { "Shatur/neovim-session-manager" },
     },
-    lazy = false,
     priority = 100
 }
