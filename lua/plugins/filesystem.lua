@@ -33,9 +33,7 @@ return {
     {
         "coffebar/neovim-project",
         opts = {
-            projects = {
-                projects
-            },
+            projects = projects,
             last_session_on_startup = false,
         },
         init = function()
