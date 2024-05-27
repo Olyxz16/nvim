@@ -5,6 +5,9 @@ vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
 vim.g.background = "light"
 
+vim.wo.number = true
+vim.wo.relativenumber = true
+
 vim.opt.swapfile = false
 vim.opt.encoding = 'utf8'
 
@@ -23,4 +26,3 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.wo.number = true
