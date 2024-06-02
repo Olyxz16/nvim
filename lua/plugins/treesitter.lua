@@ -4,7 +4,8 @@ return {
     build = ":TSUpdate",
     config = function()
       local config = require("nvim-treesitter.configs")
-      config.setup({
+        vim.filetype.add({extension = { templ = "templ" }})
+        config.setup({
         auto_install = true,
         highlight = {
           enable = true,
@@ -15,6 +16,9 @@ return {
           compilers = { "clang", "gcc" },
         },
       })
-    end
+    end,
+    dependencies = {
+        'vrischmann/tree-sitter-templ'
+    }
   }
 }

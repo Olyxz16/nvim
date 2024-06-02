@@ -25,7 +25,8 @@ return {
                     "tailwindcss",
                     "astro",
                     "dockerls",
-                    "docker_compose_language_service"
+                    "docker_compose_language_service",
+                    "templ",
                 },
                 handlers = {
                     function(server_name)
@@ -45,7 +46,18 @@ return {
         --lazy = false,
         config = function()
             local lspconfig = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities;
+            -- C setup
             lspconfig.clangd.setup { cmd = {'clangd.exe'} }
+            -- Templ setup
+            lspconfig.tailwindcss.setup({
+                capabilities = capabilities,
+                filetypes = { "templ, astro, javascript, typescript, react, html" },
+                init_options = { userLanguages = { templ = "html" } }
+            })
+            local templConf = { capabilities = capabilities, filetypes = { "html", "templ" } }
+            lspconfig.html.setup(templConf)
+            lspconfig.htmx.setup(templConf)
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
