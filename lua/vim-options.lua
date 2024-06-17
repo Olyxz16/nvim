@@ -27,3 +27,7 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+
+vim.api.nvim_create_user_command('Jq', function()
+    vim.cmd("exec '%!jq .'")
+end, {})
