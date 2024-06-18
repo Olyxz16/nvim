@@ -1,9 +1,3 @@
-local projects = {
-    "!~/.config/*",
-    "~/Appdata/Local/nvim/",
-    "~/Desktop/Poker/",
-    "~/Desktop/InkBodyArt"
-}
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -33,7 +27,7 @@ return {
     {
         "coffebar/neovim-project",
         opts = {
-            projects = projects,
+            projects = vim.projects,
             last_session_on_startup = false,
         },
         init = function()
