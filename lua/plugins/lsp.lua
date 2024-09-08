@@ -18,8 +18,6 @@ return {
                     "htmx",
                     "cssls",
                     "jsonls",
-                    "tsserver",
-                    "autotools_ls",
                     "tailwindcss",
                     "astro",
                     "dockerls",
