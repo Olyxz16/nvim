@@ -25,22 +25,6 @@ return {
         },
     },
     {
-        "coffebar/neovim-project",
-        opts = {
-            projects = vim.projects,
-            last_session_on_startup = false,
-        },
-        init = function()
-            vim.opt.sessionoptions:append("globals")
-        end,
-        dependencies = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope.nvim" },
-            { "Shatur/neovim-session-manager" },
-        },
-        priority = 100
-    },
-    {
         "stevearc/oil.nvim",
         config = function()
             local oil = require("oil")
