@@ -43,7 +43,7 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities;
             -- C setup
-            lspconfig.clangd.setup { cmd = {'clangd.exe'} }
+            lspconfig.clangd.setup { cmd = {'clangd'} }
             -- Templ setup
             lspconfig.tailwindcss.setup({
                 capabilities = capabilities,
