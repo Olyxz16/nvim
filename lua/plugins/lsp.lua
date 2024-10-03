@@ -21,16 +21,16 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities();
             -- C setup
-            lspconfig.clangd.setup { cmd = {'clangd'} }
+            lspconfig.clangd.setup({cmd={'clangd'}})
             -- Templ setup
-            lspconfig.tailwindcss.setup{
+            lspconfig.tailwindcss.setup({
                 capabilities = capabilities,
-                filetypes = { "templ, astro, javascript, typescript, react, html" },
+                filetypes = { "css", "templ", "astro", "javascript", "typescript", "react", "html" },
                 init_options = { userLanguages = { templ = "html" } }
-            }
-            lspconfig.cssls.setup{
+            })
+            lspconfig.cssls.setup({
                 settings = { css = { validate = true, lint = { unknownAtRules = "ignore", }, }, },
-            }
+            })
             local templConf = { capabilities = capabilities, filetypes = { "html", "templ" } }
             lspconfig.html.setup(templConf)
             lspconfig.htmx.setup(templConf)
@@ -47,11 +47,7 @@ return {
             local null_ls = require("null-ls")
             null_ls.setup({
                 sources = {
-                    null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.prettier,
-                    null_ls.builtins.diagnostics.erb_lint,
-                    null_ls.builtins.diagnostics.rubocop,
-                    null_ls.builtins.formatting.rubocop,
                 },
             })
 
