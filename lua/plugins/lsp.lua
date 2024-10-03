@@ -9,29 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "lua_ls",
-                    "csharp_ls",
-                    "gopls",
-                    "html",
-                    "htmx",
-                    "cssls",
-                    "jsonls",
-                    "tailwindcss",
-                    "astro",
-                    "dockerls",
-                    "docker_compose_language_service",
-                    "templ",
-                },
-                handlers = {
-                    function(server_name)
-                        require("lspconfig")[server_name].setup {
-                            capabilities = capabilities
-                        }
-                    end
-                }
-            })
+            require("mason-lspconfig").setup{}
         end,
         opts = {
             auto_install = true,
@@ -41,15 +19,18 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
-            local capabilities = require("cmp_nvim_lsp").default_capabilities;
+            local capabilities = require("cmp_nvim_lsp").default_capabilities();
             -- C setup
             lspconfig.clangd.setup { cmd = {'clangd'} }
             -- Templ setup
-            lspconfig.tailwindcss.setup({
+            lspconfig.tailwindcss.setup{
                 capabilities = capabilities,
                 filetypes = { "templ, astro, javascript, typescript, react, html" },
                 init_options = { userLanguages = { templ = "html" } }
-            })
+            }
+            lspconfig.cssls.setup{
+                settings = { css = { validate = true, lint = { unknownAtRules = "ignore", }, }, },
+            }
             local templConf = { capabilities = capabilities, filetypes = { "html", "templ" } }
             lspconfig.html.setup(templConf)
             lspconfig.htmx.setup(templConf)
