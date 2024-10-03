@@ -15,10 +15,9 @@ return {
         },
       })
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader><Tab>", builtin.find_files, {})
+      vim.keymap.set("n", "<c-Tab>", builtin.find_files, {})
       vim.keymap.set("n", "<leader><leader>", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})
-      vim.keymap.set("n", "<leader>p", ":Telescope neovim-project discover<CR>", {})
       require("telescope").load_extension("ui-select")
     end,
   },
