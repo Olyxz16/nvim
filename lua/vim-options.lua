@@ -18,3 +18,5 @@ vim.opt.foldlevel = 1
 vim.cmd("set nofoldenable")
 
 vim.cmd('set shada="NONE"')
+
+vim.cmd('autocmd InsertEnter * :let @/=""')
