@@ -47,7 +47,7 @@ return {
                     lspconfig.cssls.setup {
                         capabilities = capabilities,
                         settings = { css = { valid = true, 
-                                             lint = { unknowAtRules = "ignore", }, }, },
+                            lint = { unknowAtRules = "ignore", }, }, },
                     } 
                 end,
                 ["tailwindcss"] = function()
