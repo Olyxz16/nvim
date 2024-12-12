@@ -20,3 +20,7 @@ vim.cmd("set nofoldenable")
 vim.cmd('set shada="NONE"')
 
 vim.cmd('autocmd InsertEnter * :let @/=""')
+
+vim.api.nvim_create_user_command('Jq', function()
+    vim.cmd("exec '%!jq .'")
+end, {})
