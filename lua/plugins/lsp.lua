@@ -57,6 +57,11 @@ return {
                         init_options = { userLanguages = { templ = { "html" } } },
                     }
                 end,
+                ["volar"] = function()
+                    lspconfig.volar.setup {
+                        filetypes = { 'typescript', 'javascript', 'vue' }
+                    }
+                end,
                 ["html"] = function()
                     lspconfig.html.setup(templConf)
                 end,
