@@ -7,10 +7,6 @@ return {
         "hrsh7th/nvim-cmp"
     },
 
-    ensureInstalled = {
-        "gopls",
-    },
-
     config = function()
         local cmd = require("cmp")
         local cmp_lsp = require("cmp_nvim_lsp")
@@ -30,7 +26,6 @@ return {
         local templConf = { capabilities = capabilities, filetypes = { "html", "templ" } }
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = ensureInstalled,
             handlers = {
                 function(server_name)
                     lspconfig[server_name].setup {
@@ -73,6 +68,8 @@ return {
                 end,
                 ["htmx"] = function()
                     lspconfig.htmx.setup(templConf)
+                end,
+                ["jdtls"] = function()
                 end,
             },
         })
