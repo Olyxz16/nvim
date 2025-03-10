@@ -32,18 +32,22 @@ return {
                         capabilities = capabilities
                     }
                 end,
-                ["clangd"] = function() 
+                ["clangd"] = function()
+                    local includeDir = vim.fn.getcwd() .. '/include'
                     lspconfig.clangd.setup {
                         capabilities = capabilities,
                         cmd={ 'clangd' },
+                        init_options = {
+                            fallbackFlags = { '-I'..includeDir }
+                        }
                     }
                 end,
                 ["cssls"] = function()
                     lspconfig.cssls.setup {
                         capabilities = capabilities,
-                        settings = { css = { valid = true, 
+                        settings = { css = { valid = true,
                             lint = { unknowAtRules = "ignore", }, }, },
-                    } 
+                    }
                 end,
                 ["tailwindcss"] = function()
                     lspconfig.tailwindcss.setup {
