@@ -65,6 +65,7 @@ return {
                         },
                     },
                     project = {
+                        sourcePaths = { "src" },
                         referencedLibraries = {
                             '**/lib/*.jar',
                             'lib/**/*.jar',
