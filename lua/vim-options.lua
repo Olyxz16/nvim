@@ -24,3 +24,20 @@ vim.cmd('autocmd InsertEnter * :let @/=""')
 vim.api.nvim_create_user_command('Jq', function()
     vim.cmd("exec '%!jq .'")
 end, {})
+
+vim.keymap.set(
+    'n', '<leader><F3>', '',
+    {
+        noremap = true,
+        callback = function()
+            local scheme = vim.api.nvim_get_var("background")
+            print(scheme)
+            if scheme == "light"
+            then vim.api.nvim_set_var("background", "dark")
+                 vim.cmd("set background=dark")
+            else vim.api.nvim_set_var("background", "light")
+                 vim.cmd("set background=light")
+            end
+        end
+    }
+)
