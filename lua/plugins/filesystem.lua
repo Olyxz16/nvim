@@ -30,6 +30,7 @@ return {
             "nvim-lua/plenary.nvim"
         },
         vim.keymap.set('n', '<leader><Tab>', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true }),
+        vim.keymap.set('n', '<leader>²', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true }), 
         vim.api.nvim_create_user_command('Mark', function ()
             require("harpoon.mark").add_file()
         end, {})
