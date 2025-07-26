@@ -9,6 +9,17 @@ return {
         },
         opts = {
             filesystem = {
+                follow_current_file = {
+                    enabled = true,
+                    leave_dirs_open = true,
+                },
+                filtered_items = {
+                    hide_dotfiles = false,
+                    hide_gitignored = true,
+                    hide_by_name = {
+                        ".git",
+                    },
+                },
                 window = {
                     mappings = {
                         ["."] = "toggle_hidden",
